@@ -17,11 +17,11 @@
         
         <div class="stats-section">
             <div class="stat-item">
-                <div class="stat-number">1</div>
+                <div class="stat-number">2</div>
                 <div class="stat-label">Completed Projects</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">5+</div>
+                <div class="stat-number">10+</div>
                 <div class="stat-label">Hours of Learning</div>
             </div>
             <div class="stat-item">
@@ -33,6 +33,7 @@
         <section class="projects-section">
             <h2 class="section-title">Featured Projects</h2>
             <ul class="projects-list">
+                <!-- Calculator Project -->
                 <li class="project-item">
                     <a href="Calculator/" class="project-link">
                         <div class="project-icon">🧮</div>
@@ -45,7 +46,24 @@
                                 <span class="project-tag">CSS Animations</span>
                             </div>
                         </div>
-                        <i class="fas fa-arrow-right" style="color: #667eea; font-size: 1.2rem;"></i>
+                        <i class="fas fa-arrow-right arrow-icon"></i>
+                    </a>
+                </li>
+                
+                <!-- Cricket Game Project -->
+                <li class="project-item">
+                    <a href="Cricket Game/" class="project-link">
+                        <div class="project-icon">🏏</div>
+                        <div class="project-content">
+                            <h3 class="project-title">Cricket Game</h3>
+                            <p class="project-description">A simple cricket simulation game where you choose between bat, ball, or wicket against the computer. Learn game logic and conditional statements.</p>
+                            <div class="project-meta">
+                                <span class="project-tag">Game Logic</span>
+                                <span class="project-tag">Conditionals</span>
+                                <span class="project-tag">Randomization</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-arrow-right arrow-icon"></i>
                     </a>
                 </li>
             </ul>
@@ -81,22 +99,29 @@
             const projectItems = document.querySelectorAll('.project-item');
             
             projectItems.forEach((item, index) => {
+                // Initial state for animation
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
                 // Stagger animation
                 setTimeout(() => {
                     item.style.opacity = '1';
                     item.style.transform = 'translateY(0)';
-                }, index * 100);
+                }, index * 200);
             });
             
             // Add hover effect for project links
             const links = document.querySelectorAll('.project-link');
             links.forEach(link => {
                 link.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateX(5px)';
+                    this.style.transform = 'translateX(5px) scale(1.02)';
+                    this.querySelector('.project-icon').style.transform = 'scale(1.1) rotate(5deg)';
                 });
                 
                 link.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateX(0)';
+                    this.style.transform = 'translateX(0) scale(1)';
+                    this.querySelector('.project-icon').style.transform = 'scale(1) rotate(0deg)';
                 });
             });
             
@@ -126,7 +151,37 @@
                     }
                 }, 50);
             }
+            
+            // Add project icon hover effects
+            const projectIcons = document.querySelectorAll('.project-icon');
+            projectIcons.forEach(icon => {
+                icon.style.transition = 'transform 0.3s ease';
+            });
         });
     </script>
+    
+    <style>
+        /* Additional styles for the new cricket project */
+        .project-item:nth-child(2) .project-icon {
+            background: linear-gradient(135deg, #2e8b57 0%, #228b22 100%);
+            box-shadow: 0 5px 15px rgba(46, 139, 87, 0.3);
+        }
+        
+        .project-item:nth-child(2) .project-tag {
+            background: rgba(46, 139, 87, 0.1);
+            color: #2e8b57;
+            border: 1px solid rgba(46, 139, 87, 0.2);
+        }
+        
+        .arrow-icon {
+            color: #667eea;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-link:hover .arrow-icon {
+            transform: translateX(5px);
+        }
+    </style>
 </body>
 </html>
