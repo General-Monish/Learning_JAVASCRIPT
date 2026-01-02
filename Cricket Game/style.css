@@ -1,12 +1,582 @@
-p, #chooseBat, #chooseBall, #chooseWicket {
-    font-size: 1.2em;
-    color: #333;
-    margin-bottom: 10px;
-}
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+/* ====================================
+   CRICKET GAME - POLISHED CSS
+   Sports-themed with animations & effects
+   ==================================== */
+
+/* ========== RESET & BASE STYLES ========== */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Cricket-themed color palette */
+    --cricket-green: #1b5e20;
+    --pitch-green: #4caf50;
+    --ball-red: #ff5722;
+    --bat-brown: #5d4037;
+    --stumps-brown: #795548;
+    --cream: #fff9c4;
+    --grass-green: #2e7d32;
+    --sky-blue: #29b6f6;
+    --gold: #ffd700;
+    --white: #ffffff;
+    --text-dark: #2e2e2e;
+    --shadow: rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    background: linear-gradient(135deg, var(--sky-blue) 0%, var(--cricket-green) 100%);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text-dark);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Animated cricket pitch background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg, transparent 49%, white 49%, white 51%, transparent 51%),
+        linear-gradient(var(--pitch-green) 60%, var(--grass-green) 40%);
+    background-size: 50px 50px, 100% 100%;
+    opacity: 0.1;
+    z-index: -1;
+    animation: pitchMove 20s linear infinite;
+}
+
+@keyframes pitchMove {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(50px); }
+}
+
+/* Floating cricket elements */
+body::after {
+    content: '🏏 🏏 🏏';
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    opacity: 0.1;
+    z-index: -1;
+    animation: floatIcons 10s ease-in-out infinite;
+}
+
+@keyframes floatIcons {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* ========== HEADER STYLES ========== */
+header {
+    background: linear-gradient(135deg, var(--cricket-green), var(--grass-green));
+    width: 100%;
+    padding: 30px 20px;
+    box-shadow: 0 5px 20px var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: headerShine 3s infinite;
+}
+
+@keyframes headerShine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--white);
+    text-shadow: 
+        3px 3px 0 var(--shadow),
+        -1px -1px 0 var(--shadow),
+        1px -1px 0 var(--shadow),
+        -1px 1px 0 var(--shadow),
+        0 0 20px rgba(255, 215, 0, 0.5);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    animation: titlePulse 2s ease-in-out infinite;
+}
+
+h1::after {
+    content: '🏆';
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    animation: trophySpin 4s linear infinite;
+}
+
+@keyframes titlePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes trophySpin {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* ========== MAIN CONTENT ========== */
+main {
+    flex: 1;
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Game description */
+p {
+    font-size: 1.6rem;
+    color: var(--white);
+    margin-bottom: 40px;
     text-align: center;
+    max-width: 800px;
+    line-height: 1.6;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 25px 40px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 10px 30px var(--shadow),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+p::before {
+    content: '🏏';
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    opacity: 0.3;
+}
+
+p::after {
+    content: '🎯';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    opacity: 0.3;
+}
+
+/* ========== BUTTON CONTAINER ========== */
+.button-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    perspective: 1000px;
+}
+
+/* ========== BUTTON STYLES ========== */
+#chooseBat, #chooseBall, #chooseWicket {
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    min-width: 200px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transform-style: preserve-3d;
+}
+
+/* Button glow effect */
+#chooseBat::before, #chooseBall::before, #chooseWicket::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: 0.5s;
+}
+
+#chooseBat:hover::before, #chooseBall:hover::before, #chooseWicket:hover::before {
+    left: 100%;
+}
+
+/* Button icons */
+.button-icon {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Individual Button Styles */
+#chooseBat {
+    background: linear-gradient(145deg, var(--bat-brown), #6d4c41);
+    color: var(--cream);
+    box-shadow: 
+        0 10px 20px rgba(93, 64, 55, 0.3),
+        0 0 0 3px rgba(255, 215, 0, 0.3);
+}
+
+#chooseBat:hover {
+    transform: translateY(-10px) rotateX(10deg);
+    box-shadow: 
+        0 20px 40px rgba(93, 64, 55, 0.4),
+        0 0 30px rgba(255, 215, 0, 0.5);
+}
+
+#chooseBat:active {
+    transform: translateY(-5px) scale(0.98);
+}
+
+#chooseBat .button-icon {
+    animation: batSwing 2s ease-in-out infinite;
+}
+
+@keyframes batSwing {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-15deg); }
+    75% { transform: rotate(15deg); }
+}
+
+#chooseBall {
+    background: linear-gradient(145deg, var(--ball-red), #ff7043);
+    color: var(--white);
+    box-shadow: 
+        0 10px 20px rgba(255, 87, 34, 0.3),
+        0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+#chooseBall:hover {
+    transform: translateY(-10px) rotateX(10deg);
+    box-shadow: 
+        0 20px 40px rgba(255, 87, 34, 0.4),
+        0 0 30px rgba(255, 255, 255, 0.5);
+    animation: ballSpin 0.5s linear;
+}
+
+#chooseBall:active {
+    transform: translateY(-5px) scale(0.98);
+}
+
+@keyframes ballSpin {
+    0% { transform: translateY(-10px) rotateX(10deg) rotate(0deg); }
+    100% { transform: translateY(-10px) rotateX(10deg) rotate(360deg); }
+}
+
+#chooseBall .button-icon {
+    animation: ballBounce 1s ease-in-out infinite;
+}
+
+@keyframes ballBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+#chooseWicket {
+    background: linear-gradient(145deg, var(--stumps-brown), #8d6e63);
+    color: var(--cream);
+    box-shadow: 
+        0 10px 20px rgba(121, 85, 72, 0.3),
+        0 0 0 3px rgba(255, 193, 7, 0.3);
+}
+
+#chooseWicket:hover {
+    transform: translateY(-10px) rotateX(10deg);
+    box-shadow: 
+        0 20px 40px rgba(121, 85, 72, 0.4),
+        0 0 30px rgba(255, 193, 7, 0.5);
+}
+
+#chooseWicket:active {
+    transform: translateY(-5px) scale(0.98);
+}
+
+#chooseWicket .button-icon {
+    animation: wicketShake 1.5s ease-in-out infinite;
+}
+
+@keyframes wicketShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Button text */
+.button-text {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* ========== FOOTER STYLES ========== */
+footer {
+    background: linear-gradient(135deg, var(--grass-green), var(--cricket-green));
+    width: 100%;
+    padding: 25px 20px;
+    margin-top: 40px;
+    box-shadow: 0 -5px 20px var(--shadow);
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--ball-red), var(--gold));
+}
+
+footer p {
+    font-size: 1.2rem;
+    color: var(--white);
+    margin: 0;
+    background: transparent;
+    backdrop-filter: none;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    text-shadow: 1px 1px 2px var(--shadow);
+}
+
+footer p::before,
+footer p::after {
+    content: '🏏';
+    margin: 0 15px;
+    font-size: 1.4rem;
+    opacity: 0.7;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+    
+    h1::after {
+        right: -50px;
+        font-size: 2.5rem;
+    }
+    
+    p {
+        font-size: 1.4rem;
+        padding: 20px;
+    }
+    
+    .button-container {
+        gap: 20px;
+    }
+    
+    #chooseBat, #chooseBall, #chooseWicket {
+        min-width: 180px;
+        padding: 18px 30px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    h1::after {
+        display: none;
+    }
+    
+    p {
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+    
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #chooseBat, #chooseBall, #chooseWicket {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* ========== SPECIAL EFFECTS ========== */
+/* Success animation for selection */
+@keyframes selectionSuccess {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.selected {
+    animation: selectionSuccess 0.5s ease;
+}
+
+/* Score counter animation */
+@keyframes scoreIncrement {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-50px) scale(1.5); opacity: 0; }
+}
+
+/* Loading animation */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: loadingShimmer 1.5s infinite;
+}
+
+@keyframes loadingShimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Cricket pitch lines animation */
+@keyframes pitchLines {
+    0% { background-position: 0 0; }
+    100% { background-position: 50px 50px; }
+}
+
+/* ========== ACCESSIBILITY ========== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus styles for accessibility */
+#chooseBat:focus, #chooseBall:focus, #chooseWicket:focus {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+/* ========== PRINT STYLES ========== */
+@media print {
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    header, footer {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+    
+    #chooseBat, #chooseBall, #chooseWicket {
+        display: none;
+    }
+}
+
+/* Simple Results Display Styles */
+#results {
+    max-width: 600px;
+    width: 90%;
+    margin: 30px auto;
+    padding: 25px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #e9ecef;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+#result-text {
+    font-size: 1.5em;
+    margin: 15px 0;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 8px;
+    background: #f8f9fa;
+}
+
+#choices-text {
+    font-size: 1.1em;
+    color: #495057;
+    margin: 15px 0;
+    padding: 10px;
+    background: #e9ecef;
+    border-radius: 8px;
+}
+
+#score {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #2e8b57;
+    padding: 10px;
+    background: #d4edda;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #c3e6cb;
+}
+
+#results button {
+    background: #2e8b57;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+#results button:hover {
+    background: #3cb371;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(46, 139, 87, 0.3);
 }
