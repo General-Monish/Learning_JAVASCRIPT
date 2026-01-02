@@ -1,14 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>JavaScript Learning Projects</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 JavaScript Learning Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>JavaScript Projects</h1>
-  <ul>
-    <li>
-      <a href="Calculator/">🧮 Calculator App</a>
-    </li>
-  </ul>
+    <div class="container">
+        <header>
+            <h1>🚀 JavaScript Learning Projects</h1>
+            <p class="subtitle">A collection of interactive projects to master JavaScript fundamentals</p>
+        </header>
+        
+        <div class="stats-section">
+            <div class="stat-item">
+                <div class="stat-number">1</div>
+                <div class="stat-label">Completed Projects</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">5+</div>
+                <div class="stat-label">Hours of Learning</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Hands-on Practice</div>
+            </div>
+        </div>
+        
+        <section class="projects-section">
+            <h2 class="section-title">Featured Projects</h2>
+            <ul class="projects-list">
+                <li class="project-item">
+                    <a href="Calculator/" class="project-link">
+                        <div class="project-icon">🧮</div>
+                        <div class="project-content">
+                            <h3 class="project-title">Interactive Calculator</h3>
+                            <p class="project-description">A fully functional calculator with modern UI, animations, and keyboard support. Practice DOM manipulation and event handling.</p>
+                            <div class="project-meta">
+                                <span class="project-tag">DOM Manipulation</span>
+                                <span class="project-tag">Event Listeners</span>
+                                <span class="project-tag">CSS Animations</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-arrow-right" style="color: #667eea; font-size: 1.2rem;"></i>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="empty-state">
+                <div class="empty-icon">✨</div>
+                <h3 class="empty-title">More Projects Coming Soon!</h3>
+                <p class="empty-description">I'm currently working on more exciting JavaScript projects. Check back soon for updates!</p>
+                <div class="tech-stack">
+                    <i class="fab fa-js-square tech-icon" style="color: #F7DF1E;" title="JavaScript"></i>
+                    <i class="fab fa-html5 tech-icon" style="color: #E34F26;" title="HTML5"></i>
+                    <i class="fab fa-css3-alt tech-icon" style="color: #1572B6;" title="CSS3"></i>
+                    <i class="fab fa-github tech-icon" style="color: #333;" title="GitHub"></i>
+                </div>
+                <p class="coming-soon">Next project: To-Do List App • Weather App • Quiz Game</p>
+            </div>
+        </section>
+        
+        <footer>
+            <p class="footer-text">Built with 💻 by a passionate JavaScript learner</p>
+            <div class="tech-stack">
+                <span style="font-size: 0.9rem; color: #666;">Tech Stack:</span>
+                <i class="fab fa-js-square tech-icon" style="color: #F7DF1E;" title="JavaScript"></i>
+                <i class="fab fa-html5 tech-icon" style="color: #E34F26;" title="HTML5"></i>
+                <i class="fab fa-css3-alt tech-icon" style="color: #1572B6;" title="CSS3"></i>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Simple animation for project items
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectItems = document.querySelectorAll('.project-item');
+            
+            projectItems.forEach((item, index) => {
+                // Stagger animation
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+            
+            // Add hover effect for project links
+            const links = document.querySelectorAll('.project-link');
+            links.forEach(link => {
+                link.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px)';
+                });
+                
+                link.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+            
+            // Animate stats on scroll
+            const stats = document.querySelectorAll('.stat-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            stats.forEach(stat => observer.observe(stat));
+            
+            function animateCounter(element) {
+                const target = parseInt(element.textContent);
+                let current = 0;
+                const increment = target / 20;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        element.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        element.textContent = Math.floor(current);
+                    }
+                }, 50);
+            }
+        });
+    </script>
 </body>
 </html>
