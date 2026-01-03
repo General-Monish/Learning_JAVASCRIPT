@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Functions Practice Excercise</title>
+</head>
+<body>
+    <header>
+        <h1>Functions Practice Excercise</h1>
+        <p>In this exercise, you will practice writing and using functions in JavaScript</p>
+    </header>
+    <main>
+        <section>
+            <h2>Task 1: Create a Function to Greet a User</h2>
+            <p>Create a function named <code>greetUser</code> that takes a single parameter, <code>name</code>, and returns a greeting message in the format: "Hello, [name]!"</p>
+            <label for="nameInput">Enter name: <input type="text" id="nameInput" placeholder="Your name"></label>
+            <button id="greetUserBtn" onclick="greetFromInput()">Greet User</button>
+        </section>
+
+        <section>
+            <h2>Task 2: Create a Function to Calculate the Area of a Rectangle</h2>
+            <p>Create a function named <code>calculateArea</code> that takes two parameters, <code>length</code> and <code>width</code>, and returns the area of the rectangle.</p>
+            <button id="calculateArea" onclick="areaOfRectangle(5, 10)">Calculate Area Function</button>
+        </section>
+
+        <section>
+            <h2>Task 3: Create a Function to Check if a Number is Even or Odd</h2>
+            <p>Create a function named <code>isEven</code> that takes a single parameter, <code>number</code>, and returns <code>true</code> if the number is even and <code>false</code> if it is odd.</p>
+            <label for="oddInput">Enter a number: <input type="number" id="oddInput" placeholder="number please!!"></label>
+            <button id="isEven" onclick="oddInput()">Check Even or Odd Function</button>
+        </section>
+
+        <section>
+            <h2>Task 4: Create a Function to Find the Maximum of Three Numbers</h2>
+            <p>Create a function named <code>findMax</code> that takes three parameters, <code>a</code>, <code>b</code>, and <code>c</code>, and returns the maximum of the three numbers.</p>
+            <button id="findMax" onclick="maxOfThreeNumbers(3, 9, 6)">Find Maximum Function</button>
+        </section>
+
+        <section>
+            <h2>Results</h2>
+            <p id="greetResult">Greet User Result will be displayed here</p>
+            <p id="areaResult">Area Result will be displayed here</p>
+            <p id="evenOddResult">Even or Odd Result will be displayed here</p>
+            <p id="maxResult">Maximum Number will be displayed here</p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
