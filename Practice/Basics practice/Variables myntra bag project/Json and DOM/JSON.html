@@ -6,5 +6,31 @@
 </head>
 <body>
     <h1>JSON Practice</h1>
+
 </body>
+<script>
+    // json object
+    const jsonObject = {
+        name: "Alice",
+        age: 25,
+        city: {
+            name: "Los Angeles",
+            state: "California"
+        },
+    };
+
+    console.log(jsonObject);
+    console.log(typeof jsonObject);
+    
+    // Sample JSON data
+    const jsonData = JSON.stringify(jsonObject);
+    console.log(jsonData);
+    console.log(typeof jsonData);
+
+
+    // Parse JSON data
+    const newobj = JSON.parse(jsonData);
+    console.log(newobj);
+    console.log(typeof newobj);
+</script>
 </html>
