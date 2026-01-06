@@ -19,18 +19,24 @@
         },
     };
 
-    console.log(jsonObject);
-    console.log(typeof jsonObject);
+    // console.log(jsonObject);
+    // console.log(typeof jsonObject);
     
-    // Sample JSON data
-    const jsonData = JSON.stringify(jsonObject);
-    console.log(jsonData);
-    console.log(typeof jsonData);
+    // // Sample JSON data
+     const jsonData = JSON.stringify(jsonObject);
+    // console.log(jsonData);
+    // console.log(typeof jsonData);
 
 
-    // Parse JSON data
-    const newobj = JSON.parse(jsonData);
-    console.log(newobj);
-    console.log(typeof newobj);
+    // // Parse JSON data
+     const newobj = JSON.parse(jsonData);
+    // console.log(newobj);
+    // console.log(typeof newobj);
+
+    localStorage.setItem("userData", jsonData);
+    localStorage.removeItem("userData");
+    localStorage.setItem("userData", 'meta');
+    const retrievedData = localStorage.getItem("userData");
+    console.log(retrievedData);
 </script>
 </html>
