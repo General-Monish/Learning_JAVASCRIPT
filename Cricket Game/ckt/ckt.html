@@ -25,13 +25,21 @@
     <button id="Choose Stumps" onclick="stumpsButton()">Choose Stumps</button>
 </body>
 <script>
+    // Initialize score object
+    let score = {
+        win:0,
+        loss:0,
+        tie:0,
+    };
+    // Function for Bat button
     function batButton() {
         let computerChoice = GenerateRandomNum();
         let resultMsg = WhoWin("Bat", computerChoice);
         showwhowin("Bat", computerChoice, resultMsg);
     }
+    // Function to generate computer's random choice
     function GenerateRandomNum() {
-            let computerChoice = "";
+        let computerChoice = "";
         let randomNum = Math.random() * 3;
         randomNum = Math.floor(randomNum);
         if (randomNum === 0) {
@@ -44,34 +52,41 @@
         return computerChoice;
     }
 
+    // Function to determine the winner
     function WhoWin(userChoice, computerChoice) {
         if (userChoice === computerChoice) {
+            score.tie++;
             return "It's a Tie!";
         } else if (
             (userChoice === "Bat" && computerChoice === "Ball") ||
             (userChoice === "Ball" && computerChoice === "Stumps") ||
             (userChoice === "Stumps" && computerChoice === "Bat")
         ) {
+            score.win++;
             return "You Win!";
         } else {
+            score.loss++;
             return "You Lose!";
         }
     }
-    
+
+    // Function for Ball button
     function ballButton() {
         let computerChoice = GenerateRandomNum();
         let resultMsg = WhoWin("Ball", computerChoice);
         showwhowin("Ball", computerChoice, resultMsg);
     }
 
+    // Function for Stumps button
     function stumpsButton() {
         let computerChoice = GenerateRandomNum();
         let resultMsg = WhoWin("Stumps", computerChoice);
         showwhowin("Stumps", computerChoice, resultMsg);
     }
 
-    function showwhowin(userChoice,computerChoice,resultMsg){
-        alert(`You chose ${userChoice}.\nComputer chose ${computerChoice}.\n${resultMsg}`);
+    // Function to display the result
+    function showwhowin(userChoice, computerChoice, resultMsg) {
+        alert(`You chose ${userChoice}.\nComputer chose ${computerChoice}.\n${resultMsg} \n\nScore:\nWins: ${score.win}\nLosses: ${score.loss}\nTies: ${score.tie}`);
     }
 </script>
 
