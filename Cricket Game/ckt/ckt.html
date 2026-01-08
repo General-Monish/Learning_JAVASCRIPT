@@ -30,6 +30,9 @@
         win:0,
         loss:0,
         tie:0,
+        displayScore: function() {
+            return `Wins: ${this.win}, Losses: ${this.loss}, Ties: ${this.tie}`;
+        }
     };
     // Function for Bat button
     function batButton() {
@@ -86,7 +89,8 @@
 
     // Function to display the result
     function showwhowin(userChoice, computerChoice, resultMsg) {
-        alert(`You chose ${userChoice}.\nComputer chose ${computerChoice}.\n${resultMsg} \n\nScore:\nWins: ${score.win}\nLosses: ${score.loss}\nTies: ${score.tie}`);
+        alert(`You chose ${userChoice}.\nComputer chose ${computerChoice}.\n${resultMsg}
+         \n\n${score.displayScore()}`);
     }
 </script>
 
