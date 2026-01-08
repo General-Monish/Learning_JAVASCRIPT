@@ -25,15 +25,24 @@
     <button id="Choose Stumps" onclick="stumpsButton()">Choose Stumps</button>
 </body>
 <script>
-    // Initialize score object
-    let score = {
-        win:0,
-        loss:0,
-        tie:0,
-        displayScore: function() {
-            return `Wins: ${this.win}, Losses: ${this.loss}, Ties: ${this.tie}`;
-        }
-    };
+    // Retrieve score from local storage or initialize if not present
+    let scoreString = localStorage.getItem('score');
+    let score;
+    // Parse the score if it exists, otherwise initialize a new score object 
+    if (scoreString !== undefined && scoreString !== null) {
+        score = JSON.parse(scoreString);
+    } else {
+        score = {
+            win: 0,
+            loss: 0,
+            tie: 0,
+        };
+    }
+
+    // Function to display current score
+    score.displayScore = function () {
+        return `Wins: ${this.win}, Losses: ${this.loss}, Ties: ${this.tie}`;
+    }
     // Function for Bat button
     function batButton() {
         let computerChoice = GenerateRandomNum();
@@ -89,6 +98,9 @@
 
     // Function to display the result
     function showwhowin(userChoice, computerChoice, resultMsg) {
+        // Save score to local storage
+        localStorage.setItem('score', JSON.stringify(score));
+        // Display result message
         alert(`You chose ${userChoice}.\nComputer chose ${computerChoice}.\n${resultMsg}
          \n\n${score.displayScore()}`);
     }
