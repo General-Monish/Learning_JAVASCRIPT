@@ -23,21 +23,17 @@
     <button id="Choose Bat" onclick="batButton()">Choose Bat</button>
     <button id="Choose Ball" onclick="ballButton()">Choose Ball</button>
     <button id="Choose Stumps" onclick="stumpsButton()">Choose Stumps</button>
+    <button onclick="resetScore()">Reset Score</button>
 </body>
 <script>
     // Retrieve score from local storage or initialize if not present
     let scoreString = localStorage.getItem('score');
-    let score;
-    // Parse the score if it exists, otherwise initialize a new score object 
-    if (scoreString !== undefined && scoreString !== null) {
-        score = JSON.parse(scoreString);
-    } else {
-        score = {
-            win: 0,
-            loss: 0,
-            tie: 0,
-        };
-    }
+    // Parse the score or set default values if null 
+    let score = JSON.parse(scoreString) || {
+        win: 0,
+        loss: 0,
+        tie: 0,
+    };
 
     // Function to display current score
     score.displayScore = function () {
@@ -103,6 +99,15 @@
         // Display result message
         alert(`You chose ${userChoice}.\nComputer chose ${computerChoice}.\n${resultMsg}
          \n\n${score.displayScore()}`);
+    }
+
+    // Function to reset the score
+    function resetScore() {
+        score.win = 0;
+        score.loss = 0;
+        score.tie = 0;
+        localStorage.setItem('score', JSON.stringify(score));
+        alert("Score has been reset.\n\n" + score.displayScore());
     }
 </script>
 
