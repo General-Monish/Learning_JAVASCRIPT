@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date Time</title>
+</head>
+<body>
+    <h1>Date and Time Example</h1>
+    <p id="date-time"></p>
+    <script>
+        // Create a new Date object
+        const now = new Date();
+
+        // Get the current date and time components
+        const year = now.getFullYear();
+        const month = now.getMonth() + 1; // Months are zero-based
+        const day = now.getDate();
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+
+        // Format the date and time string
+        const dateTimeString = `Current Date and Time: ${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+
+        // Display the date and time in the paragraph
+        document.getElementById('date-time').innerText = dateTimeString;
+    </script>
+</body>
+</html>
