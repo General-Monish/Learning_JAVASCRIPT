@@ -7,17 +7,18 @@
     <style>
         /* Basic styling for the body and buttons */
         .body {
-
-            font-family: Arial, sans-serif;
             text-align: center;
         }
 
         /* Styling for buttons */
         button {
-
-            margin: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
+            cursor: pointer;
+            border: solid 2px #000;
+            background-color: transparent;
+            border-radius: 5px;
+        }
+        .image {
+            height: 50px;
         }
 
     </style>
@@ -25,10 +26,14 @@
 
 <body>
     <h1>Cricket Game - Again</h1>
-    <button id="Choose Bat" onclick="batButton()">Choose Bat</button>
-    <button id="Choose Ball" onclick="ballButton()">Choose Ball</button>
-    <button id="Choose Stumps" onclick="stumpsButton()">Choose Stumps</button>
-    <button onclick="resetScore()">Reset Score</button>
+    <button id="Choose Bat" onclick="batButton()"><img src="/Images/Icons/cricket-bat.gif" class="image" alt="cricket-bat"></button>
+    <button id="Choose Ball" onclick="ballButton()"><img src="/Images/Icons/cricket-ball.gif" class="image" alt="cricket-ball"></button>
+    <button id="Choose Stumps" onclick="stumpsButton()"><img src="/Images/Icons/wicket.gif" class="image" alt="cricket-stumps"></button>
+    <button onclick="resetScore()"><img src="/Images/Icons/reset.gif" class="image" alt="reset"></button>
+    <h2 id="user-move"></h2>
+    <h2 id="computer-move"></h2>
+    <h2 id="result-message"></h2>
+    <h2 id="score-display"></h2>
 </body>
 <script>
     // Retrieve score from local storage or initialize if not present
@@ -101,9 +106,13 @@
     function showwhowin(userChoice, computerChoice, resultMsg) {
         // Save score to local storage
         localStorage.setItem('score', JSON.stringify(score));
-        // Display result message
-        alert(`You chose ${userChoice}.\nComputer chose ${computerChoice}.\n${resultMsg}
-         \n\n${score.displayScore()}`);
+        document.querySelector('#user-move').innerText = `You chose: ${userChoice}`;
+        document.querySelector('#computer-move').innerText = `Computer chose: ${computerChoice}`;
+        document.querySelector('#result-message').innerText = resultMsg;
+        document.querySelector('#score-display').innerText = score.displayScore();
+        // // Display result message
+        // alert(`You chose ${userChoice}.\nComputer chose ${computerChoice}.\n${resultMsg}
+        //  \n\n${score.displayScore()}`);
     }
 
     // Function to reset the score
@@ -112,7 +121,7 @@
         score.loss = 0;
         score.tie = 0;
         localStorage.setItem('score', JSON.stringify(score));
-        alert("Score has been reset.\n\n" + score.displayScore());
+        showwhowin("", "", "Score has been reset!");
     }
 </script>
 
