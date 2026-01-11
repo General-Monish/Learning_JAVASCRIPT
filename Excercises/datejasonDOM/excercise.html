@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date-JSON-DOM-Practice</title>
+</head>
+<body>
+    <button id="wishbutton" onclick="showWish()">Wish Me</button>
+    <button id="btnpressed" onclick="btnPressed()"></button>
+
+</body>
+<script>
+    function showWish() {
+        const now = new Date();
+        const morningWish = "Good Morning!";
+        const afternoonWish = "Good Afternoon!";
+        const eveningWish = "Good Evening!";
+        let wish = "";
+        // Get the current hour
+        const hours = now.getHours();
+        // Determine the appropriate wish based on the hour
+        // Morning: 5 AM to 12 PM
+        if (hours < 12) {
+            wish = morningWish;
+            alert(wish + "\n hours: " + hours);
+            // Afternoon: 12 PM to 6 PM
+        } else if (hours < 18) {
+            wish = afternoonWish;
+            alert(wish + "\n hours: " + hours);
+            // Evening: 6 PM to 5 AM
+        } else {
+            wish = eveningWish;
+            alert(wish + "\n hours: " + hours);
+        }
+    }
+    let number = localStorage.getItem('number')||0;
+    function btnPressed() {
+        const buttonPressed = document.querySelector('#btnpressed');
+        if(buttonPressed && isEven(number)) {
+            number++;
+            localStorage.setItem('number',number);
+            buttonPressed.style.backgroundColor = "red";
+        }
+        else {
+            number++;
+            buttonPressed.style.backgroundColor = "blue";
+        }
+      buttonPressed.innerText = number;
+    }
+    btnPressed();
+
+    function isEven(num) {
+        return num % 2 === 0;
+    }
+
+
+</script>
+</html>
