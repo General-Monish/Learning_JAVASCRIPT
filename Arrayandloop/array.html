@@ -1,22 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Array And loops Practice32,3</title>
 </head>
+
 <body>
-    
+
 </body>
 <script>
-    let array= [5,7,8,3,12,4];
-    function arrayElement(){
+    let array = [5, 7, 8, 3, 12, 4];
+    function arrayElement() {
         return array[4];
     }
     console.log(arrayElement());
 
-    function isPrime(){
-        
+    function isPrime(num) {
+        for (let i = 2; i < num; i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+        return true;
     }
-console.log(count);
+    let num = 2;
+    let count = 0;
+    while (count < 5) {
+        if (isPrime(num)) {
+            count++;
+            console.log(num);
+        }
+        num++;
+    }
+
+    for (let i = 10; i > 0; i--) {
+        console.log(i);
+    }
+    let nums = [10, 20, -30, 40, -50];
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] < 0) continue;
+        console.log(nums[i]);
+    }
+
+    let nameArraySentence = ["This", "is", "a", "simple", "sentence."];
+    let sentence = "";
+    for (let i = 0; i < nameArraySentence.length; i++) {
+        sentence += nameArraySentence[i] + " ";
+    }
+    console.log(sentence);  
 </script>
+
 </html>
