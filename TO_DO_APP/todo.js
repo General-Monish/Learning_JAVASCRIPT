@@ -1,16 +1,24 @@
 // TO_DO_APP/todo.js
 // This file contains the logic for a simple to-do application
-let toDoList = ['Learn JavaScript', 'Build a to-do app', 'Profit!'];
+let toDoList = [
+    {'task': 'Learn JavaScript', 'date': ''},
+    {'task': 'Build a to-do app', 'date': ''},
+];
 displayToDo();
 
 // Function to add a new to-do item
 function addTodo() {
     // Get the input element and its value
     let inputButtonElement = document.querySelector('#todo_input');
+    let dateInputElement = document.querySelector('#todo_date');
     // Get the value from the input element
     let inputValueElemet = inputButtonElement.value;
-    toDoList.push(inputValueElemet);
+    let dateValueElement = dateInputElement.value;
+    // Add the new to-do item to the list
+    toDoList.push({'task': inputValueElemet, 'date': dateValueElement});
+    // Clear the input fields
     inputButtonElement.value = '';
+    dateInputElement.value = '';
     displayToDo();
 }
 
@@ -21,10 +29,13 @@ function displayToDo(){
     let newHTML = '';
     // Loop through the to-do list and create HTML for each item
     for ( let i = 0; i < toDoList.length; i++){
+        // Get the task and date for each to-do item
+        let task = toDoList[i]['task'];
+        let date = toDoList[i]['date'];
         // Append the HTML for each to-do item with a delete button
         newHTML += `
         <div>
-        <span>${toDoList[i]} </span>
+        <span>${task} - ${date}</span>
         <button onclick="toDoList.splice(${i},1);
         displayToDo();
         ">Delete</button>
