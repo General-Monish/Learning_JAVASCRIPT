@@ -17,9 +17,11 @@ function addTodo() {
 // Function to display the to-do list
 function displayToDo(){
     let todoListItem = document.querySelector('#todo_container');
+    // Clear the existing HTML
     let newHTML = '';
-
+    // Loop through the to-do list and create HTML for each item
     for ( let i = 0; i < toDoList.length; i++){
+        // Append the HTML for each to-do item with a delete button
         newHTML += `
         <div>
         <span>${toDoList[i]} </span>
@@ -29,5 +31,6 @@ function displayToDo(){
         </div>
         `;
     }
+    // Update the inner HTML of the container with the new HTML
     todoListItem.innerHTML = newHTML;
 }
