@@ -1,8 +1,8 @@
 // TO_DO_APP/todo.js
 // This file contains the logic for a simple to-do application
 let toDoList = [
-    {'task': 'Learn JavaScript', 'date': ''},
-    {'task': 'Build a to-do app', 'date': ''},
+    {'task': 'Learn JavaScript', 'date': '2024-07-01'},
+    {'task': 'Build a to-do app', 'date': '2024-07-05'},
 ];
 displayToDo();
 
@@ -34,12 +34,12 @@ function displayToDo(){
         let date = toDoList[i]['date'];
         // Append the HTML for each to-do item with a delete button
         newHTML += `
-        <div>
-        <span>${task} - ${date}</span>
-        <button onclick="toDoList.splice(${i},1);
+        
+        <span>${task}</span>
+        <span>${date}</span>
+        <button id="delete-btn" onclick="toDoList.splice(${i},1);
         displayToDo();
         ">Delete</button>
-        </div>
         `;
     }
     // Update the inner HTML of the container with the new HTML

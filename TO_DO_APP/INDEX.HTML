@@ -9,10 +9,11 @@
 
 <body>
     <h1 id="main-heading">Todo App</h1>
-    <input type="text" id="todo_input" placeholder="IDHAR ENTRY FAAD KUCH">
-    <input type="date" id="todo_date">
-    <button onclick="addTodo()">Add Todo Here</button>
-
+    <div id="input_container">
+        <input type="text" id="todo_input" placeholder="IDHAR ENTRY FAAD KUCH">
+        <input type="date" id="todo_date">
+        <button id="add-btn" onclick="addTodo()">Add Todo</button>
+    </div>
     <div id="todo_container"></div>
 
     <script src="todo.js"></script>

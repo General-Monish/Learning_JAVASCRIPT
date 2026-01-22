@@ -7,6 +7,45 @@ body{
     color: #333;
 }
 
-#todo_input{
-    width: 30%;
+#todo_input, #todo_date{
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+#add-btn{
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+#add-btn:hover{
+    background-color: #218838;
+}
+#delete-btn{
+    padding: 4px 8px;
+    font-size: 12px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+#delete-btn:hover{
+    background-color: #c82333;
+}
+#input_container, #todo_container{
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    column-gap: 10px;
+    row-gap: 5px;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
 }
