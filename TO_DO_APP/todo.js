@@ -11,11 +11,14 @@ function addTodo() {
     // Get the input element and its value
     let inputButtonElement = document.querySelector('#todo_input');
     let dateInputElement = document.querySelector('#todo_date');
+
     // Get the value from the input element
     let inputValueElemet = inputButtonElement.value;
     let dateValueElement = dateInputElement.value;
+
     // Add the new to-do item to the list
     toDoList.push({'task': inputValueElemet, 'date': dateValueElement});
+
     // Clear the input fields
     inputButtonElement.value = '';
     dateInputElement.value = '';
