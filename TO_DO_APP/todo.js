@@ -4,6 +4,7 @@ let toDoList = [
     {'task': 'Learn JavaScript', 'date': '2024-07-01'},
     {'task': 'Build a to-do app', 'date': '2024-07-05'},
 ];
+// Initial display of the to-do list
 displayToDo();
 
 // Function to add a new to-do item
