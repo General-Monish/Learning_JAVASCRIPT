@@ -5,6 +5,7 @@
     <title>Advanced Functions</title>
 </head>
 <body>
+    <button id="btn">Click Me</button>
     <script>
         // Function Expression Example - Assigning a function to a variable 
         let sum = function(num1, num2){
@@ -34,6 +35,33 @@
         console.log("Single Argument Anonymous Function Result:");
         console.log("Square of 5:", square(5));
 
+        // SetTimeout 
+        let greet = () => {
+            console.log("Hello after 2 seconds!");
+        }
+        setTimeout(greet, 2000);
+        console.log("This message appears before the greeting.");
+
+        // setInterval
+        setInterval(greet, 3000);
+
+                                                                  // Event Listener with Anonymous Function
+
+        // Adding a click event listener to the button 
+        let button = document.getElementById("btn");
+
+        // Using an anonymous function as the event handler 
+        let eventHandler = (event) => {
+            console.log("Button was clicked!");
+        }
+        // Attaching the event handler to the button's click event
+        button.addEventListener("click", eventHandler);
+
+        // Another example of an anonymous function for the click event 
+        let printDate = () => console.log(new Date());
+        button.addEventListener("click", printDate);
+
+        
     </script>
 </body>
 </html>
