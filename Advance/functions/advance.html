@@ -5,6 +5,35 @@
     <title>Advanced Functions</title>
 </head>
 <body>
-    
+    <script>
+        // Function Expression Example - Assigning a function to a variable 
+        let sum = function(num1, num2){
+            return num1 + num2;
+        }
+        console.log("Function Expression Result:");
+        console.log(sum(10, 20));
+
+        // Using the sum function inside another function to add three numbers 
+        let sumThree = function(num1,num2,num3){
+            let sum1 = sum(num1,num2);
+            let totalSum = sum(sum1,num3);
+            return totalSum;
+        }
+        console.log("Sum of Three Numbers Result:");
+        console.log(sumThree(10, 20, 30));
+
+        // Anonymous Function Example - Function without a name
+        let sumAgain = (num1, num2) => {
+            return num1 + num2;
+        } 
+        console.log("Anonymous Function Result:");
+        console.log(sumAgain(40, 50));
+
+        // single argument anonymous function example 
+        let square = num => num * num;
+        console.log("Single Argument Anonymous Function Result:");
+        console.log("Square of 5:", square(5));
+
+    </script>
 </body>
 </html>
