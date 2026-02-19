@@ -7,7 +7,7 @@
 <body>
     <button id="btn">Click Me</button>
     <script>
-        // Function Expression Example - Assigning a function to a variable 
+        // Function Expression Example - Assigning a function to a variable  
         let sum = function(num1, num2){
             return num1 + num2;
         }
@@ -16,6 +16,7 @@
 
         // Using the sum function inside another function to add three numbers 
         let sumThree = function(num1,num2,num3){
+            // Reusing the sum function to add the first two numbers
             let sum1 = sum(num1,num2);
             let totalSum = sum(sum1,num3);
             return totalSum;
