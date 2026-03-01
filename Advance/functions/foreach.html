@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Foreach Example</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let arr = [1, 2, 3, 4, 5];
+
+    // Using a traditional for loop to iterate over the array
+    console.log("Using traditional for loop:");
+    for (let i = 0; i <arr.length; i++) {
+        console.log(arr[i]);
+    }
+
+    // Using forEach to iterate over the array
+    console.log("Using forEach:");
+    arr.forEach(function(element) {
+        console.log(element);
+    });
+
+    // Using forEach with an arrow function
+    console.log("Using forEach with an arrow function:");
+    arr.forEach(element => console.log(element));
+</script>
+</html>
