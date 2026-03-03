@@ -99,34 +99,40 @@ header {
 }
 
 /* MAIN SECTION IS STARTED FROM HERE */
-.banner_container {
-    width: 100%;
-    margin: 40px 0;
-}
-
-.banner_image_container {
-    width: 100%;
-}
-
-.category_heading {
-
-    text-transform: uppercase;
-    color: #3e4152;
-    letter-spacing: .15em;
-    font-size: 1.8em;
-    margin: 50px 0 10px 30px;
-    max-height: 5em;
-    font-weight: 700;
-}
-.category_items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+.items_container {
 
 }
-.offers_image_container {
-    width: 247px;
+.item_container {
+
 }
+.item-image-1 {
+
+}
+.rating{
+
+}
+.company-name {
+
+}
+.item-name {
+
+}
+.pricing {
+
+}
+.discounted-price {
+
+}
+.original-price {
+
+}
+.discount-percentage {
+
+}
+.btn-Add-To-Cart {
+
+}
+
 .footer_container {
     background-color: #fafbfc;
     padding: 30px 0px 40px 0px;
