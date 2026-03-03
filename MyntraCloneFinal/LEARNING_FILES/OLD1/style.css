@@ -1,0 +1,20 @@
+h1{
+    /* this is heading one css*/
+    color: hotpink;
+}
+#heading{
+    color: darkgoldenrod;
+}
+#h3_heading{
+    color: aqua;
+}
+p{
+    color: blue;
+}
+#DIV{
+    color: cyan;
+}
+#first,#second{
+    font-size: x-large;
+color: forestgreen;
+}

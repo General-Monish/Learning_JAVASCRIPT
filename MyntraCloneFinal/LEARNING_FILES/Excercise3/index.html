@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d2fe575b07.js" crossorigin="anonymous"></script>
+    <title>Exercise2-CSS</title>
+    <style>
+        #Welcome {
+            color: red;
+            text-align: center;
+            text-decoration: underline;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            margin: 0px;
+        }
+        #outer {
+            border: 2px solid black;
+            padding: 10px;
+            margin: 10px;
+            font-size: 25px;
+        }
+        #inner {
+            border: 2px solid blue;
+            padding: 10px;
+            margin: 10px;
+            font-size: 10px;
+        }
+        .fa-linkedin {
+            color: #0A66C2;
+            font-size: 50px;
+            margin-left: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: color 0.3s;
+            &:hover { color: #004182; }
+            ;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .fa-github {
+            color: black;
+            font-size: 50px;
+            margin-left: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: color 0.3s;
+            &:hover { color: grey; }
+            ;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .fa-google {
+            color: black;
+            font-size: 50px;
+            margin-left: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: color 0.3s;
+            &:hover { color: grey; }
+            ;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="Welcome">Welcome to Exercise 2 - CSS</h1>
+    <p>This is a simple HTML document to practice CSS styling.</p>
+    <div id="outer">
+        <p>This is a paragraph inside the outer div.</p>
+        <div id="inner">
+            <p>This is a paragraph inside the inner div.</p>
+        </div>
+    </div>
+    <div>
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-github"></i>
+        <i class="fa-brands fa-google"></i>
+    </div>
+</body>
+
+</html>

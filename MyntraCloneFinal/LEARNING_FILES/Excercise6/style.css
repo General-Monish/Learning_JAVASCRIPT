@@ -1,0 +1,60 @@
+.navs{
+    background-color: lightgreen;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.navs a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background-color:coral;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+#imagediv {
+    display: flex;
+    justify-content: center;
+    background-color: lightgray;
+    padding: 2rem;
+    border: 2px solid black;
+}
+.boxcontainer {
+    display: flex;
+    justify-content: space-around;
+    background-color: midnightblue;
+    height: 200px;
+    width: 100%;
+    align-items: center;
+}
+.box{
+    background-color: orange;
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    text-align: center;
+    line-height: 100px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#box3{
+    background-color: yellow;
+    flex-grow: 1;
+    flex-shrink: 2;
+}
+#div{
+    background-color: green;
+    height: 50px;
+    width: 50px;
+    margin: auto;
+}
+@media screen and (min-width: 300px) and (max-width: 400px){
+    #div{
+        background-color: red;
+    }
+}

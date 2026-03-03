@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoxModel Practice</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .Box{
+            width: 200px;
+            height: 200px;
+            text-align: center;
+
+        }
+        #box1{
+            background-color: lightblue;
+            box-sizing: border-box;
+        }
+        #box2{
+            background-color: lightgreen;
+            box-sizing: border-box;
+        }
+        #clickMe{
+            margin: 100px;
+            width: 80px;
+            height: 80px;
+            padding: 10px 15px 10px 15px;
+            border: dotted red;
+            border-radius: 90px;
+            background-color: lightyellow;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box1" class="Box">Box 1</div>
+    <div id="box2" class="Box">Box 2</div>
+    <hr>
+    <button id="clickMe">Click Me</button>
+</body>
+</html>

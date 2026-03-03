@@ -1,0 +1,171 @@
+.btn{
+    background-color:aqua;
+    border: 6px solid gold;
+    font-size: 16px;
+    height: 50px;
+    width: 150px;
+
+    transition: all;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+}
+*{
+    margin:5px;
+    padding: 10px;
+}
+.btn:hover{
+    background-color: gold;
+    color: white;
+    height: 60px;
+    width: 160px;
+    font-size: 18px;
+}
+.btn:active{
+    background-color: red;
+    color: yellow;
+    height: 55px;
+    width: 155px;
+    font-size: 17px;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: lightgreen;
+
+    transition: all 1s ease-in-out;
+    font-size: 18px;
+    text-align: center;
+    line-height: 100px;
+    border: 5px solid green;
+
+}
+#box1:hover{
+    transform: rotate(360deg);
+    background-color: green;
+    color: white;
+    font-size: 22px;
+}
+#box2:hover{
+    transform: rotatex(55deg);
+    background-color: green;
+    color: white;
+    font-size: 22px;
+}
+#box3:hover{
+    transform: rotatey(45deg);
+    background-color: green;
+    color: white;
+    font-size: 22px;
+}
+#Scalebox1:hover{
+    transform: scale(1.5);
+    background-color: green;
+    color: white;
+    font-size: 22px;
+}
+#Scalebox2:hover{
+    transform: scaleX(1.5);
+    background-color: green;
+    color: white;
+    font-size: 22px;
+}
+#Scalebox3:hover{
+    transform: scaleY(1.5);
+    background-color: green;
+    color: white;
+    font-size: 22px;
+}
+#Translatebox1:hover{
+    transform: translate(50px, 50px);
+    background-color: green;
+    color: white;
+    font-size: 22px;
+}
+#Translatebox2:hover{
+    transform: translateX(50px);
+    background-color: green;
+    color: white;
+    font-size: 22px;
+}
+#Translatebox3:hover{
+    transform: translateY(50px);
+    background-color: green;
+    color: white;
+    font-size: 22px;
+}
+#skewbox1:hover{
+    transform: skew(20deg);
+    background-color: green;
+    color: white;
+    font-size: 22px;
+}
+#skewbox2:hover{
+    transform: skewX(20deg);
+    background-color: green;
+    color: white;
+    font-size: 22px;
+}
+#skewbox3:hover{
+    transform: skewY(20deg);
+    background-color: green;
+    color: white;
+    font-size: 22px;
+}
+@keyframes Moving {
+    from{
+        transform: translateX(0px);
+        background-color: lightgreen;
+    }
+    to{
+        transform: translateX(100px);
+        background-color: green;
+    }
+}
+.box1{
+    width: 100px;
+    height: 100px;
+    background-color: lightgreen;
+
+    transition: all 1s ease-in-out;
+    font-size: 18px;
+    text-align: center;
+    line-height: 100px;
+    border: 5px solid green;
+
+    animation: Moving  2s  ease-in-out infinite alternate ;
+}
+.box2{
+    width: 100px;
+    height: 100px;
+    background-color: lightgreen;
+    transition: all 1s ease-in-out;
+    font-size: 18px;
+    text-align: center;
+    line-height: 100px;
+    border: 5px solid green;
+
+    animation: MovingRandom  2s  ease-in-out infinite ;
+}
+@keyframes MovingRandom {
+    0%{
+        transform: translateX(0px) translateY(0px);
+        background-color: lightgreen;
+    }
+    25%{
+        transform: translateX(100px) translateY(0px);
+        background-color: green;
+    }
+    50%{
+        transform: translateX(100px) translateY(100px);
+        background-color: yellow;
+    }
+    75%{
+        transform: translateX(0px) translateY(100px);
+        background-color: orange;
+    }
+    100%{
+        transform: translateX(0px) translateY(0px);
+        background-color: lightgreen;
+    }
+}

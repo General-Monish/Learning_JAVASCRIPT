@@ -1,0 +1,19 @@
+#first{
+    color: red;
+    background-color: chartreuse;
+    font-size: xx-large;
+}
+#second{
+    color: green;
+    background-color: aqua;
+    font-size: xx-large;
+}
+#third{
+    color: blue;
+    background-color: black;
+    font-size: xx-large;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
