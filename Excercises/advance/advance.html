@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advance Exercise </title>
+</head>
+<body>
+    <h1>Advance Exercise</h1>
+    <p>This is an exercise to practice advanced JavaScript concepts.</p>
+</body>
+<script>
+    // Example of using an arrow function to multiply two numbers
+    let multiply = (a, b) => a * b;
+    console.log("Multiplication of 5 and 3 is: " + multiply(5, 3));
+
+    // Example of using an arrow function to greet a user
+    let greet = () => console.log("Hello, welcome to the advanced JavaScript exercise!");
+
+    // Example of using an arrow function to run another function twice
+    let runtTwice = inputFunction => {
+        inputFunction();
+        inputFunction();
+    }
+    // Running the greet function twice using runtTwice
+    runtTwice(greet);
+</script>
+</html>
