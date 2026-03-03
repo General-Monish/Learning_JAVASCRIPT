@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Advance Exercise </title>
 </head>
+
 <body>
     <h1>Advance Exercise</h1>
     <p>This is an exercise to practice advanced JavaScript concepts.</p>
+
+    <button id="grow">Click And Grow Me</button>
 </body>
 <script>
     // Example of using an arrow function to multiply two numbers
@@ -23,5 +27,26 @@
     }
     // Running the greet function twice using runtTwice
     runtTwice(greet);
+
+    let button = document.querySelector("#grow");
+    button.addEventListener("click", () => {
+        let currentWidth = button.offsetWidth;
+        setTimeout(() => {
+            button.style.width = (currentWidth + 20) + "px";
+        }, 2000);
+    });
+
+    let arr = [1, 2, 3, 4, 5];
+    // Using forEach to iterate over the array
+    console.log("Using forEach to iterate over the array:");
+    let sum =0;
+    arr.forEach(element => {
+        console.log(element);
+        sum += element;
+    });
+    console.log("Sum of array elements: " + sum);
+
+    
 </script>
+
 </html>
