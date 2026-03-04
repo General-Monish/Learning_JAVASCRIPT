@@ -25,9 +25,8 @@ function DisplayCartItems() {
 
 function DisplayItemsOnHomePage() {
     let itemsContainerElement = document.querySelector('.items-Container');
+    if (!itemsContainerElement) return;
     let innerHTMLString = '';
-    console.log(items);
-    console.log(typeof items);
     items.forEach(item => {
         innerHTMLString += `<div class="item-Container">
                 <img class="item-image-1" src="${item.item_Image}" alt="mine-image-1">
