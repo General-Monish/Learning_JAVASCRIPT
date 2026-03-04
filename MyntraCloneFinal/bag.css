@@ -1,136 +1,310 @@
+/* Red & Black Theme - Shopping Cart App */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    min-height: 100vh;
+}
+
+/* Bag Items Container - Redesigned with Dark Theme */
 .bag-items-container {
-  display: inline-block;
-  width: 64%;
-  padding-right: 20px;
-  border-right: 1px solid #eaeaec;
-  padding-top: 32px;
-  color: #282c3f;
-  font-size: 13px;
-  line-height: 1.42857143;
+    display: inline-block;
+    width: 64%;
+    padding-right: 20px;
+    border-right: 2px solid #c41e1e;
+    padding-top: 32px;
+    color: #e0e0e0;
+    font-size: 13px;
+    line-height: 1.42857143;
 }
 
 .bag-page {
-  width: 75%;
-  margin-left: 12.5%;
+    width: 75%;
+    margin-left: 12.5%;
+    background: #1f1f1f;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(196, 30, 30, 0.2);
+    padding: 20px;
 }
 
+/* Bag Summary - Dark Card Style */
 .bag-summary {
-  vertical-align: top;
-  display: inline-block;
-  width: 35%;
-  padding: 24px 0 0 16px;
-  color: #282c3f;
-  font-size: 13px;
-  line-height: 1.42857143;
+    vertical-align: top;
+    display: inline-block;
+    width: 35%;
+    padding: 24px 0 0 16px;
+    color: #e0e0e0;
+    font-size: 13px;
+    line-height: 1.42857143;
+    background: #2d2d2d;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-left: 4px solid #c41e1e;
 }
 
 .bag-details-container {
-  margin-bottom: 16px;
+    margin-bottom: 16px;
 }
 
+/* Price Header - Red Accent */
 .price-header {
-  font-size: 12px;
-  font-weight: 700;
-  margin: 24px 0 16px;
-  color: #535766;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 24px 0 16px;
+    color: #ff6b6b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #c41e1e;
+    padding-bottom: 8px;
 }
 
 .price-item {
-  margin-bottom: 12px;
-  line-height: 16px;
-  font-size: 14px;
-  color: #282c3f;
+    margin-bottom: 12px;
+    line-height: 16px;
+    font-size: 14px;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
 }
 
 .price-item-value {
-  float: right;
+    color: #ffffff;
+    font-weight: 600;
 }
 
 .priceDetail-base-discount {
-  color: #03a685;
+    color: #ff6b6b;
+    font-weight: 600;
 }
 
 .price-footer {
-  font-weight: 700;
-  font-size: 15px;
-  padding-top: 16px;
-  border-top: 1px solid #eaeaec;
-  color: #3e4152;
-  line-height: 16px;
+    font-weight: 700;
+    font-size: 15px;
+    padding-top: 16px;
+    border-top: 2px solid #c41e1e;
+    color: #ffffff;
+    line-height: 16px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
 }
 
+/* Place Order Button - Red Theme */
 .btn-place-order {
-  width: 100%;
-  letter-spacing: 1px;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 2px;
-  border-width: 0px;
-  padding: 10px 16px;
-  background-color: rgb(255, 63, 108);
-  color: rgb(255, 255, 255);
-  cursor: pointer;
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    border-width: 0px;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #c41e1e 0%, #8b0000 100%);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(196, 30, 30, 0.3);
 }
 
+.btn-place-order:hover {
+    background: linear-gradient(135deg, #8b0000 0%, #660000 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(196, 30, 30, 0.4);
+}
+
+/* Bag Item Container - Dark Card */
 .bag-item-container {
-  margin-bottom: 8px;
-  background: #fff;
-  font-size: 14px;
-  border: 1px solid #eaeaec;
-  border-radius: 4px;
-  position: relative;
-  padding: 12px 12px 0;
+    margin-bottom: 16px;
+    background: #2d2d2d;
+    font-size: 14px;
+    border: 1px solid #3d3d3d;
+    border-radius: 10px;
+    position: relative;
+    padding: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+.bag-item-container:hover {
+    transform: translateX(4px);
+    border-left: 4px solid #c41e1e;
+    box-shadow: 0 6px 16px rgba(196, 30, 30, 0.15);
+}
+
+/* Item Left Part - Red Tint */
 .item-left-part {
-  position: absolute;
-  background: rgb(255, 242, 223);
-  height: 148px;
-  width: 111px;
+    position: absolute;
+    background: linear-gradient(135deg, #3d1e1e 0%, #2d1a1a 100%);
+    height: 148px;
+    width: 111px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #c41e1e;
 }
 
 .item-right-part {
-  padding-left: 12px;
-  position: relative;
-  min-height: 148px;
-  margin-left: 111px;
-  margin-bottom: 12px;
+    padding-left: 12px;
+    position: relative;
+    min-height: 148px;
+    margin-left: 111px;
+    margin-bottom: 12px;
+    color: #e0e0e0;
 }
 
 .bag-item-img {
-  width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
+/* Return Period - Red Highlights */
 .return-period {
-  display: inline-flex;
-  font-size: 14px;
-  padding-top: 8px;
+    display: inline-flex;
+    font-size: 14px;
+    padding-top: 8px;
+    background: #3d3d3d;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-top: 8px;
 }
 
 .return-period-days {
-  font-weight: 700;
-  margin-right: 4px;
+    font-weight: 700;
+    margin-right: 4px;
+    color: #ff6b6b;
 }
 
 .delivery-details {
-  margin-top: 5px;
-  color: #282c3f;
-  font-size: 12px;
-  letter-spacing: -.1px;
-  margin-bottom: 8px;
-  line-height: 15px;
+    margin-top: 5px;
+    color: #b0b0b0;
+    font-size: 12px;
+    letter-spacing: -.1px;
+    margin-bottom: 8px;
+    line-height: 15px;
 }
 
 .delivery-details-days {
-  color: #03a685;
+    color: #ff6b6b;
+    font-weight: 600;
 }
 
+/* Remove from Cart - Red with Hover Effect */
 .remove-from-cart {
-  position: absolute;
-  font-size: 25px;
-  top: 10px;
-  right: 18px;
-  width: 14px;
-  height: 14px;
-  cursor: pointer;
+    position: absolute;
+    font-size: 20px;
+    top: 10px;
+    right: 18px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    color: #c41e1e;
+    background: #3d3d3d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.remove-from-cart:hover {
+    background: #c41e1e;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .bag-page {
+        width: 90%;
+        margin-left: 5%;
+        padding: 10px;
+    }
+    
+    .bag-items-container {
+        width: 100%;
+        border-right: none;
+        padding-right: 0;
+    }
+    
+    .bag-summary {
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+    .item-left-part {
+        height: 120px;
+        width: 90px;
+    }
+    
+    .item-right-part {
+        margin-left: 90px;
+    }
+}
+
+/* Scrollbar Styling - Red Theme */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c41e1e;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #8b0000;
+}
+
+/* Price Items Hover Effect */
+.price-item:hover {
+    background: #3d3d3d;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+/* Additional Polish - Red Glow Effects */
+.bag-summary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #c41e1e, #ff6b6b, #c41e1e);
+    border-radius: 10px 10px 0 0;
+}
+
+/* Text Selection Color */
+::selection {
+    background-color: #c41e1e;
+    color: white;
+}
+
+/* Focus States for Accessibility */
+.btn-place-order:focus,
+.remove-from-cart:focus {
+    outline: 2px solid #ff6b6b;
+    outline-offset: 2px;
+}
+
+/* Loading Animation for Buttons (if needed) */
+.btn-place-order:active {
+    transform: scale(0.98);
+}
+
+/* Price Summary Red Highlight */
+.price-footer span:last-child {
+    color: #ff6b6b;
+    font-size: 18px;
 }
